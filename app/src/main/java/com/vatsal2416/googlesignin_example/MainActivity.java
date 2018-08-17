@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -78,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
                                 + "\nYour GivenName : "+personGivenName,Toast.LENGTH_LONG).show();
                         }
                 }
-                //Toast.makeText(getApplicationContext(),"Your phone number : "+mAuth.getCurrentUser().,Toast.LENGTH_LONG).show();
-
         });
 
     }
@@ -115,14 +112,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             startActivity(new Intent(MainActivity.this,AccountActivity.class));
-                            //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(),"Authentication Failed!",Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+
                         }
 
                     }
